@@ -5,7 +5,7 @@ week_number=$1
 kadai_number=$2
 
 # ディレクトリのパス
-directory="/Users/pality/portfolio/KIC/python/kisoron"
+directory="/Users/pality/portfolio/KIC/python"
 
 # ファイル名を生成
 filename="${directory}/week${week_number}-kadai${kadai_number}.py"

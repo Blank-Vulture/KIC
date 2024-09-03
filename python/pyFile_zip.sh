@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 圧縮するディレクトリのパスを指定
-DIRECTORY="/Users/pality/portfolio/KIC/python/kisoron"
+DIRECTORY="/Users/pality/portfolio/KIC/python"
 
 # ディレクトリに移動
 cd "$DIRECTORY"
