@@ -1,25 +1,21 @@
 #!/bin/bash
 
-# 圧縮するディレクトリのパスを指定
-DIRECTORY="/Users/pality/portfolio/KIC/python"
+# 基本ディレクトリ
+BASE_DIR="/Users/pality/portfolio/KIC/python"
 
-# ディレクトリに移動
-cd "$DIRECTORY"
+# 圧縮ファイルを保存するディレクトリ
+ZIP_DIR="$BASE_DIR/submission"
 
-# 既存のすべてのZIPファイルを削除
-rm -f week*-kadai.zip
+# 既存のZIPファイルを削除
+rm -f "$ZIP_DIR"/*.zip
 
-# ファイル名からすべての週番号を取得し、ユニークな週番号のリストを作成
-weeks=($(ls week*-kadai*.py 2>/dev/null | grep -o 'week[0-9]\+' | sort -u))
-
-# ユニークな週番号ごとに処理
-for week in "${weeks[@]}"
+# 各週のディレクトリを検索してZIP圧縮
+for week_folder in $BASE_DIR/week*
 do
-    # ZIPファイル名を生成
-    ZIP_FILE="${week}-kadai.zip"
-
-    # 特定の週のPythonファイルをZIP形式で圧縮
-    zip -j "$ZIP_FILE" "${week}-kadai*.py"
+    week=$(basename $week_folder)
+    zip_file="$ZIP_DIR/${week}-kadai.zip"
+    # 圧縮コマンド（ディレクトリ構造を無視）
+    zip -j "$zip_file" "$week_folder"/*.py
 done
 
-echo "All Python files have been appropriately zipped into their respective week archives."
+echo "All Python files have been appropriately zipped into their respective week archives in $ZIP_DIR."
