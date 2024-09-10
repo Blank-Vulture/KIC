@@ -1,21 +1,9 @@
 # 課題1の辞書
-person1 = {
-    'name': 'デイビッド・マルティネス',
-    'age': 17,
-    'city': 'ナイトシティ'
-}
+person1 = {"name": "デイビッド・マルティネス", "age": 17, "city": "ナイトシティ"}
 
-person2 = {
-    'name': 'ルーシー',
-    'age': 20,
-    'city': 'ジャパンタウン'
-}
+person2 = {"name": "ルーシー", "age": 20, "city": "ジャパンタウン"}
 
-person3 = {
-    'name': 'メイン',
-    'age': 35,
-    'city': 'サントドミンゴ'
-}
+person3 = {"name": "メイン", "age": 35, "city": "サントドミンゴ"}
 
 # すべての辞書をpeopleというリストに格納
 people = [person1, person2, person3]

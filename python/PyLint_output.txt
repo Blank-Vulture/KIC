@@ -1,0 +1,6 @@
+************* Module week4-kadai1
+week4/week4-kadai1.py:1:0: E0602: Undefined variable 'printf' (undefined-variable)
+
+------------------------------------------------------------------
+Your code has been rated at 0.00/10 (previous run: 0.00/10, +0.00)
+

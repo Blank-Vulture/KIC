@@ -1,0 +1,7 @@
+week4/week4-kadai1.py:1:1: F821 Undefined name `printf`
+  |
+1 | printf("test")
+  | ^^^^^^ F821
+  |
+
+Found 1 error.

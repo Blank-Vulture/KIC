@@ -1,0 +1,19 @@
+[tool.black]
+line-length = 300
+
+[tool.pylint]
+max-line-length = 300
+disable = [
+    "missing-module-docstring",
+    "invalid-name",
+    "missing-final-newline",
+    "missing-function-docstring",
+    "unspecified-encoding"
+]
+
+[tool.ruff]
+line-length = 300
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E203", "E501"]

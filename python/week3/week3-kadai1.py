@@ -1,10 +1,6 @@
 # 課題1
 
-character_info = {
-    'name': 'デイビッド・マルティネス',
-    'age': 17,
-    'city': 'ナイトシティ'
-}
+character_info = {"name": "デイビッド・マルティネス", "age": 17, "city": "ナイトシティ"}
 
 # 辞書に格納されている各情報を表示
 print(f"氏名: {character_info['name']}")
