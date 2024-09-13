@@ -1,2 +1,0 @@
-week4/week4-kadai1.py:1: error: Name "printf" is not defined  [name-defined]
-Found 1 error in 1 file (checked 1 source file)
