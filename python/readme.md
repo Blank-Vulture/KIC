@@ -29,7 +29,7 @@
 │   ├── week4-kadai1.py
 │   └── …
 ├── week5
-│   ├── week4-kadai1.py
+│   ├── week5-kadai1.py
 │   └── …
 └── AnalyticsReport          # 解析レポートの出力先
     ├── report.html          # 解析結果のHTMLレポート
