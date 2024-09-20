@@ -1,5 +1,5 @@
 # 課題 7: ファイルが見つからなくてもエラーを表示しないようにするプログラム
-filenames = ['cats.txt', 'dogs.txt']
+filenames = ["cats.txt", "dogs.txt"]
 
 for filename in filenames:
     try:

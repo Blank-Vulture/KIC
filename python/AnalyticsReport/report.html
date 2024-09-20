@@ -1,30 +1,35 @@
 
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="ja">
         <head>
             <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>解析レポート</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-            <title>Analysis Report</title>
             <style>
                 .error { color: #dc3545; }
                 .warning { color: #ff8c00; }
                 .suggestion { color: #28a745; }
+                .code-block {
+                    background-color: #f8f9fa;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-family: monospace;
+                    white-space: pre-wrap;
+                }
             </style>
         </head>
         <body>
             <div class="container">
-                <h1 class="mt-4">Analysis Report</h1>
-                <p>Total Files: 70</p>
-                <p>Success: 68</p>
-                <p>Fail: 2</p>
-                <p>Process Time: 22.49 seconds</p>
+                <h1 class="mt-4">解析レポート</h1>
+                <p>総ファイル数: 70</p>
+                <p>成功: 68</p>
+                <p>失敗: 2</p>
+                <p>処理時間: 22.49 seconds</p>
 
-                <h2 class="mt-4">Error, Warning, and Suggestion Ratio</h2>
+                <h2 class="mt-4">エラー、警告、提案の比率</h2>
                 <img src="report_chart.png" class="img-fluid" alt="Error, Warning, and Suggestion Ratio">
 
-                <h2 class="mt-4">File Results</h2>
+                <h2 class="mt-4">ファイル別結果</h2>
                 
                 <div class="card mt-3">
                     <div class="card-header">
@@ -35,10 +40,10 @@
                         
                         
                         <li class="list-group-item error">
-                            <strong>Ruff Errors</strong>
+                            <strong>Ruff エラー</strong>
                             <ul>
                             
-                                <li>Found 1 error.</li>
+                                <li class="code-block">Found 1 error.</li>
                             
                             </ul>
                         </li>
@@ -46,30 +51,30 @@
                         
                         
                         <li class="list-group-item suggestion">
-                            <strong>Ruff Suggestions</strong>
+                            <strong>Ruff 提案</strong>
                             <ul>
                             
-                                <li>week5/week5-kadai3.py:10:15: F541 [*] f-string without any placeholders</li>
+                                <li class="code-block">week5/week5-kadai3.py:10:15: F541 [*] f-string without any placeholders</li>
                             
-                                <li>   |</li>
+                                <li class="code-block">   |</li>
                             
-                                <li> 9 |     def describe_user(self):</li>
+                                <li class="code-block"> 9 |     def describe_user(self):</li>
                             
-                                <li>10 |         print(f"ユーザー情報:")</li>
+                                <li class="code-block">10 |         print(f"ユーザー情報:")</li>
                             
-                                <li>   |               ^^^^^^^^^^^^^^^^ F541</li>
+                                <li class="code-block">   |               ^^^^^^^^^^^^^^^^ F541</li>
                             
-                                <li>11 |         print(f"名前: {self.first_name} {self.last_name}")</li>
+                                <li class="code-block">11 |         print(f"名前: {self.first_name} {self.last_name}")</li>
                             
-                                <li>12 |         print(f"性別: {self.gender}")</li>
+                                <li class="code-block">12 |         print(f"性別: {self.gender}")</li>
                             
-                                <li>   |</li>
+                                <li class="code-block">   |</li>
                             
-                                <li>   = help: Remove extraneous `f` prefix</li>
+                                <li class="code-block">   = help: Remove extraneous `f` prefix</li>
                             
-                                <li></li>
+                                <li class="code-block"></li>
                             
-                                <li>[*] 1 fixable with the `--fix` option.</li>
+                                <li class="code-block">[*] 1 fixable with the `--fix` option.</li>
                             
                             </ul>
                         </li>
@@ -78,10 +83,10 @@
                         
                         
                         <li class="list-group-item suggestion">
-                            <strong>Mypy Suggestions</strong>
+                            <strong>Mypy 提案</strong>
                             <ul>
                             
-                                <li>Success: no issues found in 1 source file</li>
+                                <li class="code-block">Success: no issues found in 1 source file</li>
                             
                             </ul>
                         </li>
@@ -98,10 +103,10 @@
                         
                         
                         <li class="list-group-item error">
-                            <strong>Ruff Errors</strong>
+                            <strong>Ruff エラー</strong>
                             <ul>
                             
-                                <li>Found 1 error.</li>
+                                <li class="code-block">Found 1 error.</li>
                             
                             </ul>
                         </li>
@@ -109,30 +114,30 @@
                         
                         
                         <li class="list-group-item suggestion">
-                            <strong>Ruff Suggestions</strong>
+                            <strong>Ruff 提案</strong>
                             <ul>
                             
-                                <li>week5/week5-kadai5.py:11:15: F541 [*] f-string without any placeholders</li>
+                                <li class="code-block">week5/week5-kadai5.py:11:15: F541 [*] f-string without any placeholders</li>
                             
-                                <li>   |</li>
+                                <li class="code-block">   |</li>
                             
-                                <li>10 |     def describe_user(self):</li>
+                                <li class="code-block">10 |     def describe_user(self):</li>
                             
-                                <li>11 |         print(f"ユーザー情報:")</li>
+                                <li class="code-block">11 |         print(f"ユーザー情報:")</li>
                             
-                                <li>   |               ^^^^^^^^^^^^^^^^ F541</li>
+                                <li class="code-block">   |               ^^^^^^^^^^^^^^^^ F541</li>
                             
-                                <li>12 |         print(f"名前: {self.first_name} {self.last_name}")</li>
+                                <li class="code-block">12 |         print(f"名前: {self.first_name} {self.last_name}")</li>
                             
-                                <li>13 |         print(f"性別: {self.gender}")</li>
+                                <li class="code-block">13 |         print(f"性別: {self.gender}")</li>
                             
-                                <li>   |</li>
+                                <li class="code-block">   |</li>
                             
-                                <li>   = help: Remove extraneous `f` prefix</li>
+                                <li class="code-block">   = help: Remove extraneous `f` prefix</li>
                             
-                                <li></li>
+                                <li class="code-block"></li>
                             
-                                <li>[*] 1 fixable with the `--fix` option.</li>
+                                <li class="code-block">[*] 1 fixable with the `--fix` option.</li>
                             
                             </ul>
                         </li>
@@ -141,10 +146,10 @@
                         
                         
                         <li class="list-group-item suggestion">
-                            <strong>Mypy Suggestions</strong>
+                            <strong>Mypy 提案</strong>
                             <ul>
                             
-                                <li>Success: no issues found in 1 source file</li>
+                                <li class="code-block">Success: no issues found in 1 source file</li>
                             
                             </ul>
                         </li>

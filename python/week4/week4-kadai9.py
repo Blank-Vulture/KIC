@@ -1,6 +1,6 @@
 import json
 
-filename = 'favorite_number.json'
+filename = "favorite_number.json"
 
 # 好きな番号を保存したファイルがあるか確認し、表示する
 try:
@@ -10,6 +10,6 @@ try:
 except FileNotFoundError:
     # ファイルがない場合、ユーザーに好きな番号を入力させ、それを保存する
     favorite_number = input("あなたの好きな番号を入力してください: ")
-    with open(filename, 'w') as file_object:
+    with open(filename, "w") as file_object:
         json.dump(favorite_number, file_object)
     print(f"あなたの好きな番号を {favorite_number} として保存しました。")

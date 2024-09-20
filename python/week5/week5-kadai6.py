@@ -13,17 +13,19 @@ class Restaurant:
     def open_restaurant(self):
         print(f"{self.restaurant_name} は現在営業中です。")
 
+
 class IceCreamStand(Restaurant):
-    def __init__(self, restaurant_name, cuisine_type='Ice Cream'):
+    def __init__(self, restaurant_name, cuisine_type="Ice Cream"):
         super().__init__(restaurant_name, cuisine_type)
-        self.flavors = ['Vanilla', 'Chocolate', 'Strawberry']
+        self.flavors = ["Vanilla", "Chocolate", "Strawberry"]
 
     def show_flavors(self):
         print("提供中のアイスクリームの種類:")
         for flavor in self.flavors:
             print(f"- {flavor}")
 
+
 # IceCreamStandのインスタンスを作成
-ice_cream_stand = IceCreamStand('Sweet Treats')
+ice_cream_stand = IceCreamStand("Sweet Treats")
 ice_cream_stand.describe_restaurant()
 ice_cream_stand.show_flavors()

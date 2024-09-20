@@ -70,12 +70,24 @@ class Analyzer:
                         self.python_files.append(os.path.join(root, file))
                 index += 1
 
+    def format_files_with_black(self):
+        """各PythonファイルをBlackで自動整形"""
+        for file_path in self.python_files:
+            try:
+                subprocess.run(['black', file_path], check=True)
+                print(f"Formatted {file_path} with black.")
+            except subprocess.CalledProcessError as e:
+                print(f"Error formatting {file_path} with black: {e}")
+
     def run_analysis(self):
         """静的解析を実行"""
         self.collect_python_files()
         if not self.python_files:
             print("No Python files found.")
             return
+
+        # ここで各ファイルをBlackで自動整形
+        self.format_files_with_black()
 
         start_time = time.time()
 
@@ -179,31 +191,36 @@ class ReportGenerator:
         """HTMLレポートを生成してブラウザで表示"""
         template = """
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="ja">
         <head>
             <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>解析レポート</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-            <title>Analysis Report</title>
             <style>
                 .error { color: #dc3545; }
                 .warning { color: #ff8c00; }
                 .suggestion { color: #28a745; }
+                .code-block {
+                    background-color: #f8f9fa;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-family: monospace;
+                    white-space: pre-wrap;
+                }
             </style>
         </head>
         <body>
             <div class="container">
-                <h1 class="mt-4">Analysis Report</h1>
-                <p>Total Files: {{ report.summary.total_files }}</p>
-                <p>Success: {{ report.summary.success }}</p>
-                <p>Fail: {{ report.summary.fail }}</p>
-                <p>Process Time: {{ report.summary.process_time }}</p>
+                <h1 class="mt-4">解析レポート</h1>
+                <p>総ファイル数: {{ report.summary.total_files }}</p>
+                <p>成功: {{ report.summary.success }}</p>
+                <p>失敗: {{ report.summary.fail }}</p>
+                <p>処理時間: {{ report.summary.process_time }}</p>
 
-                <h2 class="mt-4">Error, Warning, and Suggestion Ratio</h2>
+                <h2 class="mt-4">エラー、警告、提案の比率</h2>
                 <img src="report_chart.png" class="img-fluid" alt="Error, Warning, and Suggestion Ratio">
 
-                <h2 class="mt-4">File Results</h2>
+                <h2 class="mt-4">ファイル別結果</h2>
                 {% for file in report.files %}
                 <div class="card mt-3">
                     <div class="card-header">
@@ -212,80 +229,80 @@ class ReportGenerator:
                     <ul class="list-group list-group-flush">
                         {% if file.pylint.errors %}
                         <li class="list-group-item error">
-                            <strong>PyLint Errors</strong>
+                            <strong>PyLint エラー</strong>
                             <ul>
                             {% for error in file.pylint.errors %}
-                                <li>{{ error }}</li>
+                                <li class="code-block">{{ error }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.pylint.warnings %}
                         <li class="list-group-item warning">
-                            <strong>PyLint Warnings</strong>
+                            <strong>PyLint 警告</strong>
                             <ul>
                             {% for warning in file.pylint.warnings %}
-                                <li>{{ warning }}</li>
+                                <li class="code-block">{{ warning }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.ruff.errors %}
                         <li class="list-group-item error">
-                            <strong>Ruff Errors</strong>
+                            <strong>Ruff エラー</strong>
                             <ul>
                             {% for error in file.ruff.errors %}
-                                <li>{{ error }}</li>
+                                <li class="code-block">{{ error }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.ruff.warnings %}
                         <li class="list-group-item warning">
-                            <strong>Ruff Warnings</strong>
+                            <strong>Ruff 警告</strong>
                             <ul>
                             {% for warning in file.ruff.warnings %}
-                                <li>{{ warning }}</li>
+                                <li class="code-block">{{ warning }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.ruff.suggestions %}
                         <li class="list-group-item suggestion">
-                            <strong>Ruff Suggestions</strong>
+                            <strong>Ruff 提案</strong>
                             <ul>
                             {% for suggestion in file.ruff.suggestions %}
-                                <li>{{ suggestion }}</li>
+                                <li class="code-block">{{ suggestion }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.mypy.errors %}
                         <li class="list-group-item error">
-                            <strong>Mypy Errors</strong>
+                            <strong>Mypy エラー</strong>
                             <ul>
                             {% for error in file.mypy.errors %}
-                                <li>{{ error }}</li>
+                                <li class="code-block">{{ error }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.mypy.warnings %}
                         <li class="list-group-item warning">
-                            <strong>Mypy Warnings</strong>
+                            <strong>Mypy 警告</strong>
                             <ul>
                             {% for warning in file.mypy.warnings %}
-                                <li>{{ warning }}</li>
+                                <li class="code-block">{{ warning }}</li>
                             {% endfor %}
                             </ul>
                         </li>
                         {% endif %}
                         {% if file.mypy.suggestions %}
                         <li class="list-group-item suggestion">
-                            <strong>Mypy Suggestions</strong>
+                            <strong>Mypy 提案</strong>
                             <ul>
                             {% for suggestion in file.mypy.suggestions %}
-                                <li>{{ suggestion }}</li>
+                                <li class="code-block">{{ suggestion }}</li>
                             {% endfor %}
                             </ul>
                         </li>
@@ -355,6 +372,7 @@ def main():
             print(f"{RED}--strict is ignored when used with --load-report.{RESET}")
         report_generator = ReportGenerator({})
         report_generator.load_report(os.path.join('AnalyticsReport', 'report.json'))  # Load the report data
+        report_generator.draw_charts()
         report_generator.generate_html_report()
     elif args.save_report:
         analyzer.run_analysis()

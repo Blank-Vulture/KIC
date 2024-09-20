@@ -15,9 +15,10 @@ class User:
     def greet_user(self):
         print(f"Welcome back, {self.first_name}.")
 
+
 # インスタンスの作成とメソッドの呼び出し
-user_1 = User('V', 'Merc', '不明', 27)
-user_2 = User('David', 'Martinez', '男性', 18)
+user_1 = User("V", "Merc", "不明", 27)
+user_2 = User("David", "Martinez", "男性", 18)
 
 user_1.describe_user()
 user_1.greet_user()

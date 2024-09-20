@@ -5,7 +5,8 @@ def make_sandwich(*ingredients):
         print(f"- {ingredient}")
     print("サンドウィッチの注文を承りました。\n")
 
+
 # 関数を3回呼び、異なる具材を指定
-make_sandwich('ハム', 'チーズ', 'レタス')
-make_sandwich('トマト', 'バジル')
-make_sandwich('ベーコン', '卵', 'アボカド', 'マヨネーズ')
+make_sandwich("ハム", "チーズ", "レタス")
+make_sandwich("トマト", "バジル")
+make_sandwich("ベーコン", "卵", "アボカド", "マヨネーズ")

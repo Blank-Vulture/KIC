@@ -2,7 +2,8 @@
 def city_country(city, country):
     return f"{city}, {country}"
 
+
 # 3つの都市と国のペアで呼び出し（英語表記）
-print(city_country('Kobe', 'Japan'))
-print(city_country('Paris', 'France'))
-print(city_country('New York', 'USA'))
+print(city_country("Kobe", "Japan"))
+print(city_country("Paris", "France"))
+print(city_country("New York", "USA"))

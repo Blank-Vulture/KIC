@@ -21,8 +21,9 @@ class Restaurant:
     def increment_number_served(self, additional_customers):
         self.number_served += additional_customers
 
+
 # インスタンスの作成
-restaurant = Restaurant('Afterlife Diner', 'Street Food')
+restaurant = Restaurant("Afterlife Diner", "Street Food")
 
 # 初期の顧客数を表示
 restaurant.describe_restaurant()

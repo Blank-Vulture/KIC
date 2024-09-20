@@ -1,7 +1,7 @@
 import json
 
 # 好きな番号をファイルから読み込む
-filename = 'favorite_number.json'
+filename = "favorite_number.json"
 try:
     with open(filename) as file_object:
         favorite_number = json.load(file_object)

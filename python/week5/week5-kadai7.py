@@ -12,6 +12,7 @@ class User:
     def greet_user(self):
         print(f"こんにちは、{self.first_name}さん！")
 
+
 class Admin(User):
     def __init__(self, first_name, last_name, gender, age):
         super().__init__(first_name, last_name, gender, age)
@@ -22,7 +23,8 @@ class Admin(User):
         for privilege in self.privileges:
             print(f"- {privilege}")
 
+
 # Adminのインスタンスを作成
-admin = Admin('Judy', 'Alvarez', '女性', 28)
+admin = Admin("Judy", "Alvarez", "女性", 28)
 admin.describe_user()
 admin.show_privileges()

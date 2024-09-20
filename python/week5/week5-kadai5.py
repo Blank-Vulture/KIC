@@ -25,8 +25,9 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+
 # インスタンスの作成
-user = User('David', 'Martinez', '男性', 18)
+user = User("David", "Martinez", "男性", 18)
 
 # ログイン試行を数回行う
 user.increment_login_attempts()

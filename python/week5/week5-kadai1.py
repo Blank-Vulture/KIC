@@ -11,8 +11,9 @@ class Restaurant:
     def open_restaurant(self):
         print(f"{self.restaurant_name} is now open!")
 
+
 # インスタンスの作成とメソッドの呼び出し
-restaurant = Restaurant('Afterlife Diner', 'Street Food')
+restaurant = Restaurant("Afterlife Diner", "Street Food")
 print(restaurant.restaurant_name)
 print(restaurant.cuisine_type)
 

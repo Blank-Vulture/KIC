@@ -1,8 +1,8 @@
 # 課題 17: whileループでユーザー入力を受け取るプログラム
 def make_album(artist, title, tracks=None):
-    album = {'artist': artist, 'title': title}
+    album = {"artist": artist, "title": title}
     if tracks:
-        album['tracks'] = tracks
+        album["tracks"] = tracks
     return album
 
 
@@ -11,15 +11,15 @@ while True:
     print("(終了するには 'q' を入力してください)")
 
     artist = input("アーティスト名: ")
-    if artist == 'q':
+    if artist == "q":
         break
 
     title = input("アルバムタイトル: ")
-    if title == 'q':
+    if title == "q":
         break
 
     tracks = input("曲数 (任意の項目、入力しない場合は空欄のまま): ")
-    if tracks == 'q':
+    if tracks == "q":
         break
     elif tracks:
         album = make_album(artist, title, tracks=int(tracks))
