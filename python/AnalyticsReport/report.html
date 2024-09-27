@@ -21,10 +21,10 @@
         <body>
             <div class="container">
                 <h1 class="mt-4">解析レポート</h1>
-                <p>総ファイル数: 70</p>
-                <p>成功: 68</p>
-                <p>失敗: 2</p>
-                <p>処理時間: 22.49 seconds</p>
+                <p>総ファイル数: 6</p>
+                <p>成功: 0</p>
+                <p>失敗: 6</p>
+                <p>処理時間: 1.23 seconds</p>
 
                 <h2 class="mt-4">エラー、警告、提案の比率</h2>
                 <img src="report_chart.png" class="img-fluid" alt="Error, Warning, and Suggestion Ratio">
@@ -33,7 +33,7 @@
                 
                 <div class="card mt-3">
                     <div class="card-header">
-                        ./week5/week5-kadai3.py
+                        week1/week1-kadai1.py
                     </div>
                     <ul class="list-group list-group-flush">
                         
@@ -43,38 +43,101 @@
                             <strong>Ruff エラー</strong>
                             <ul>
                             
-                                <li class="code-block">Found 1 error.</li>
+                                <li class="code-block">Found 6 errors.</li>
                             
                             </ul>
                         </li>
                         
+                        
+                        <li class="list-group-item warning">
+                            <strong>Ruff 警告</strong>
+                            <ul>
+                            
+                                <li class="code-block">warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.</li>
+                            
+                                <li class="code-block">warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.</li>
+                            
+                            </ul>
+                        </li>
                         
                         
                         <li class="list-group-item suggestion">
                             <strong>Ruff 提案</strong>
                             <ul>
                             
-                                <li class="code-block">week5/week5-kadai3.py:10:15: F541 [*] f-string without any placeholders</li>
+                                <li class="code-block">week1/week1-kadai1.py:1:1: INP001 File `week1/week1-kadai1.py` is part of an implicit namespace package. Add an `__init__.py`.</li>
                             
-                                <li class="code-block">   |</li>
+                                <li class="code-block">week1/week1-kadai1.py:1:1: D100 Missing docstring in public module</li>
                             
-                                <li class="code-block"> 9 |     def describe_user(self):</li>
+                                <li class="code-block">week1/week1-kadai1.py:1:5: ANN201 Missing return type annotation for public function `output`</li>
                             
-                                <li class="code-block">10 |         print(f"ユーザー情報:")</li>
+                                <li class="code-block">  |</li>
                             
-                                <li class="code-block">   |               ^^^^^^^^^^^^^^^^ F541</li>
+                                <li class="code-block">1 | def output(names):</li>
                             
-                                <li class="code-block">11 |         print(f"名前: {self.first_name} {self.last_name}")</li>
+                                <li class="code-block">  |     ^^^^^^ ANN201</li>
                             
-                                <li class="code-block">12 |         print(f"性別: {self.gender}")</li>
+                                <li class="code-block">2 |     for name in names:</li>
                             
-                                <li class="code-block">   |</li>
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
                             
-                                <li class="code-block">   = help: Remove extraneous `f` prefix</li>
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Add return type annotation: `None`</li>
                             
                                 <li class="code-block"></li>
                             
-                                <li class="code-block">[*] 1 fixable with the `--fix` option.</li>
+                                <li class="code-block">week1/week1-kadai1.py:1:5: D103 Missing docstring in public function</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ D103</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai1.py:1:12: ANN001 Missing type annotation for function argument `names`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |            ^^^^^ ANN001</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai1.py:3:9: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |         ^^^^^ T201</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).</li>
                             
                             </ul>
                         </li>
@@ -96,7 +159,7 @@
                 
                 <div class="card mt-3">
                     <div class="card-header">
-                        ./week5/week5-kadai5.py
+                        week1/week1-kadai2.py
                     </div>
                     <ul class="list-group list-group-flush">
                         
@@ -106,38 +169,903 @@
                             <strong>Ruff エラー</strong>
                             <ul>
                             
-                                <li class="code-block">Found 1 error.</li>
+                                <li class="code-block">Found 7 errors.</li>
                             
                             </ul>
                         </li>
                         
+                        
+                        <li class="list-group-item warning">
+                            <strong>Ruff 警告</strong>
+                            <ul>
+                            
+                                <li class="code-block">warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.</li>
+                            
+                                <li class="code-block">warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.</li>
+                            
+                            </ul>
+                        </li>
                         
                         
                         <li class="list-group-item suggestion">
                             <strong>Ruff 提案</strong>
                             <ul>
                             
-                                <li class="code-block">week5/week5-kadai5.py:11:15: F541 [*] f-string without any placeholders</li>
+                                <li class="code-block">week1/week1-kadai2.py:1:1: INP001 File `week1/week1-kadai2.py` is part of an implicit namespace package. Add an `__init__.py`.</li>
                             
-                                <li class="code-block">   |</li>
+                                <li class="code-block">week1/week1-kadai2.py:1:1: D100 Missing docstring in public module</li>
                             
-                                <li class="code-block">10 |     def describe_user(self):</li>
+                                <li class="code-block">week1/week1-kadai2.py:1:5: ANN201 Missing return type annotation for public function `output`</li>
                             
-                                <li class="code-block">11 |         print(f"ユーザー情報:")</li>
+                                <li class="code-block">  |</li>
                             
-                                <li class="code-block">   |               ^^^^^^^^^^^^^^^^ F541</li>
+                                <li class="code-block">1 | def output(names):</li>
                             
-                                <li class="code-block">12 |         print(f"名前: {self.first_name} {self.last_name}")</li>
+                                <li class="code-block">  |     ^^^^^^ ANN201</li>
                             
-                                <li class="code-block">13 |         print(f"性別: {self.gender}")</li>
+                                <li class="code-block">2 |     for name in names:</li>
                             
-                                <li class="code-block">   |</li>
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
                             
-                                <li class="code-block">   = help: Remove extraneous `f` prefix</li>
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Add return type annotation: `None`</li>
                             
                                 <li class="code-block"></li>
                             
-                                <li class="code-block">[*] 1 fixable with the `--fix` option.</li>
+                                <li class="code-block">week1/week1-kadai2.py:1:5: D103 Missing docstring in public function</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ D103</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai2.py:1:12: ANN001 Missing type annotation for function argument `names`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |            ^^^^^ ANN001</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai2.py:3:9: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |         ^^^^^ T201</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai2.py:10:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block"> 8 | unavailable_guests = "Maine"</li>
+                            
+                                <li class="code-block"> 9 | </li>
+                            
+                                <li class="code-block">10 | print(f"Unfortunately, {unavailable_guests} can't make it to the dinner party.")</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">11 | </li>
+                            
+                                <li class="code-block">12 | new_guests = "David"</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option).</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Mypy 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">Success: no issues found in 1 source file</li>
+                            
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-header">
+                        week1/week1-kadai3.py
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        
+                        
+                        
+                        <li class="list-group-item error">
+                            <strong>Ruff エラー</strong>
+                            <ul>
+                            
+                                <li class="code-block">Found 8 errors.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item warning">
+                            <strong>Ruff 警告</strong>
+                            <ul>
+                            
+                                <li class="code-block">warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.</li>
+                            
+                                <li class="code-block">warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Ruff 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:1:1: INP001 File `week1/week1-kadai3.py` is part of an implicit namespace package. Add an `__init__.py`.</li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:1:1: D100 Missing docstring in public module</li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:1:5: ANN201 Missing return type annotation for public function `output`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ ANN201</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Add return type annotation: `None`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:1:5: D103 Missing docstring in public function</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ D103</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:1:12: ANN001 Missing type annotation for function argument `names`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |            ^^^^^ ANN001</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:3:9: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |         ^^^^^ T201</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:10:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block"> 8 | unavailable_guests = "Maine"</li>
+                            
+                                <li class="code-block"> 9 | </li>
+                            
+                                <li class="code-block">10 | print(f"Unfortunately, {unavailable_guests} can't make it to the dinner party.")</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">11 | </li>
+                            
+                                <li class="code-block">12 | new_guests = "David"</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai3.py:18:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">16 | output(guests)</li>
+                            
+                                <li class="code-block">17 | </li>
+                            
+                                <li class="code-block">18 | print("I found a bigger table, so I can invite more people.")</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">19 | </li>
+                            
+                                <li class="code-block">20 | guests.insert(0, "Pilar")</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option).</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Mypy 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">Success: no issues found in 1 source file</li>
+                            
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-header">
+                        week1/week1-kadai4.py
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        
+                        
+                        
+                        <li class="list-group-item error">
+                            <strong>Ruff エラー</strong>
+                            <ul>
+                            
+                                <li class="code-block">Found 13 errors.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item warning">
+                            <strong>Ruff 警告</strong>
+                            <ul>
+                            
+                                <li class="code-block">warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.</li>
+                            
+                                <li class="code-block">warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Ruff 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:1:1: INP001 File `week1/week1-kadai4.py` is part of an implicit namespace package. Add an `__init__.py`.</li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:1:1: D100 Missing docstring in public module</li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:1:5: ANN201 Missing return type annotation for public function `output`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ ANN201</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Add return type annotation: `None`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:1:5: D103 Missing docstring in public function</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ D103</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:1:12: ANN001 Missing type annotation for function argument `names`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |            ^^^^^ ANN001</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:3:9: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |         ^^^^^ T201</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:10:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block"> 8 | unavailable_guests = "Maine"</li>
+                            
+                                <li class="code-block"> 9 | </li>
+                            
+                                <li class="code-block">10 | print(f"Unfortunately, {unavailable_guests} can't make it to the dinner party.")</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">11 | </li>
+                            
+                                <li class="code-block">12 | new_guests = "David"</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:18:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">16 | output(guests)</li>
+                            
+                                <li class="code-block">17 | </li>
+                            
+                                <li class="code-block">18 | print("I found a bigger table, so I can invite more people.")</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">19 | </li>
+                            
+                                <li class="code-block">20 | guests.insert(0, "Pilar")</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:29:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">27 | output(guests)</li>
+                            
+                                <li class="code-block">28 | </li>
+                            
+                                <li class="code-block">29 | print("Unfortunately, due to shortage of ingredients, I can only invite two people to the dinner party.")</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">30 | </li>
+                            
+                                <li class="code-block">31 | while len(guests) > 2:</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:31:21: PLR2004 Magic value used in comparison, consider replacing `2` with a constant variable</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">29 | print("Unfortunately, due to shortage of ingredients, I can only invite two people to the dinner party.")</li>
+                            
+                                <li class="code-block">30 | </li>
+                            
+                                <li class="code-block">31 | while len(guests) > 2:</li>
+                            
+                                <li class="code-block">   |                     ^ PLR2004</li>
+                            
+                                <li class="code-block">32 |     print(f"Dear {guests.pop()}, I'm sorry to inform you that I can no longer invite you to the dinner party.")</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:32:5: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">31 | while len(guests) > 2:</li>
+                            
+                                <li class="code-block">32 |     print(f"Dear {guests.pop()}, I'm sorry to inform you that I can no longer invite you to the dinner party.")</li>
+                            
+                                <li class="code-block">   |     ^^^^^ T201</li>
+                            
+                                <li class="code-block">33 | </li>
+                            
+                                <li class="code-block">34 | for guest in guests:</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:35:5: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">34 | for guest in guests:</li>
+                            
+                                <li class="code-block">35 |     print(f"Dear {guest}, you are still invited to the dinner party. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">   |     ^^^^^ T201</li>
+                            
+                                <li class="code-block">36 | </li>
+                            
+                                <li class="code-block">37 | del guests[:]</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai4.py:38:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">37 | del guests[:]</li>
+                            
+                                <li class="code-block">38 | print(guests)</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">No fixes available (8 hidden fixes can be enabled with the `--unsafe-fixes` option).</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Mypy 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">Success: no issues found in 1 source file</li>
+                            
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-header">
+                        week1/week1-kadai5.py
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        
+                        
+                        
+                        <li class="list-group-item error">
+                            <strong>Ruff エラー</strong>
+                            <ul>
+                            
+                                <li class="code-block">Found 9 errors.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item warning">
+                            <strong>Ruff 警告</strong>
+                            <ul>
+                            
+                                <li class="code-block">warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.</li>
+                            
+                                <li class="code-block">warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Ruff 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:1:1: INP001 File `week1/week1-kadai5.py` is part of an implicit namespace package. Add an `__init__.py`.</li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:1:1: D100 Missing docstring in public module</li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:3:1: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | places = ["Maldives", "Bali", "Great Barrier Reef", "Hawaii", "Amalfi Coast"]</li>
+                            
+                                <li class="code-block">2 | </li>
+                            
+                                <li class="code-block">3 | print("Original List:", places)</li>
+                            
+                                <li class="code-block">  | ^^^^^ T201</li>
+                            
+                                <li class="code-block">4 | </li>
+                            
+                                <li class="code-block">5 | print("Sorted List:", sorted(places))</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:5:1: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">3 | print("Original List:", places)</li>
+                            
+                                <li class="code-block">4 | </li>
+                            
+                                <li class="code-block">5 | print("Sorted List:", sorted(places))</li>
+                            
+                                <li class="code-block">  | ^^^^^ T201</li>
+                            
+                                <li class="code-block">6 | </li>
+                            
+                                <li class="code-block">7 | print("Reversed List:", sorted(places, reverse=True))</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:7:1: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">5 | print("Sorted List:", sorted(places))</li>
+                            
+                                <li class="code-block">6 | </li>
+                            
+                                <li class="code-block">7 | print("Reversed List:", sorted(places, reverse=True))</li>
+                            
+                                <li class="code-block">  | ^^^^^ T201</li>
+                            
+                                <li class="code-block">8 | </li>
+                            
+                                <li class="code-block">9 | places.reverse()</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:10:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block"> 9 | places.reverse()</li>
+                            
+                                <li class="code-block">10 | print("Reversed List:", places)</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">11 | </li>
+                            
+                                <li class="code-block">12 | places.reverse()</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:13:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">12 | places.reverse()</li>
+                            
+                                <li class="code-block">13 | print("List restored to original order:", places)</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">14 | </li>
+                            
+                                <li class="code-block">15 | places.sort()</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:16:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">15 | places.sort()</li>
+                            
+                                <li class="code-block">16 | print("List sorted alphabetically:", places)</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">17 | </li>
+                            
+                                <li class="code-block">18 | places.sort(reverse=True)</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai5.py:19:1: T201 `print` found</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">18 | places.sort(reverse=True)</li>
+                            
+                                <li class="code-block">19 | print("List sorted reverse alphabetically:", places)</li>
+                            
+                                <li class="code-block">   | ^^^^^ T201</li>
+                            
+                                <li class="code-block">   |</li>
+                            
+                                <li class="code-block">   = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">No fixes available (7 hidden fixes can be enabled with the `--unsafe-fixes` option).</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Mypy 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">Success: no issues found in 1 source file</li>
+                            
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-header">
+                        week1/week1-kadai6.py
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        
+                        
+                        
+                        <li class="list-group-item error">
+                            <strong>Ruff エラー</strong>
+                            <ul>
+                            
+                                <li class="code-block">Found 7 errors.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item warning">
+                            <strong>Ruff 警告</strong>
+                            <ul>
+                            
+                                <li class="code-block">warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.</li>
+                            
+                                <li class="code-block">warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`.</li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="list-group-item suggestion">
+                            <strong>Ruff 提案</strong>
+                            <ul>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:1:1: INP001 File `week1/week1-kadai6.py` is part of an implicit namespace package. Add an `__init__.py`.</li>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:1:1: D100 Missing docstring in public module</li>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:1:5: ANN201 Missing return type annotation for public function `output`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ ANN201</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Add return type annotation: `None`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:1:5: D103 Missing docstring in public function</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |     ^^^^^^ D103</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:1:12: ANN001 Missing type annotation for function argument `names`</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">  |            ^^^^^ ANN001</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:3:9: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">1 | def output(names):</li>
+                            
+                                <li class="code-block">2 |     for name in names:</li>
+                            
+                                <li class="code-block">3 |         print(f"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.")</li>
+                            
+                                <li class="code-block">  |         ^^^^^ T201</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">week1/week1-kadai6.py:8:1: T201 `print` found</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">6 | guests = ["Maine", "Lucy", "Rebecca"]</li>
+                            
+                                <li class="code-block">7 | output(guests)</li>
+                            
+                                <li class="code-block">8 | print(f"invite guests total: {len(guests)}")</li>
+                            
+                                <li class="code-block">  | ^^^^^ T201</li>
+                            
+                                <li class="code-block">  |</li>
+                            
+                                <li class="code-block">  = help: Remove `print`</li>
+                            
+                                <li class="code-block"></li>
+                            
+                                <li class="code-block">No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option).</li>
                             
                             </ul>
                         </li>

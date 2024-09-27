@@ -1,37 +1,60 @@
 {
     "files": [
         {
-            "file": "./week5/week5-kadai3.py",
+            "file": "week1/week1-kadai1.py",
             "pylint": {
                 "errors": [],
                 "warnings": [],
                 "suggestions": [
-                    "************* Module week5-kadai3",
-                    "week5/week5-kadai3.py:2:0: C0115: Missing class docstring (missing-class-docstring)",
-                    "week5/week5-kadai3.py:10:14: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)",
-                    "",
-                    "------------------------------------------------------------------",
-                    "Your code has been rated at 8.95/10 (previous run: 8.95/10, +0.00)",
-                    ""
+                    "No files to lint: exiting."
                 ]
             },
             "ruff": {
                 "errors": [
-                    "Found 1 error."
+                    "Found 6 errors."
                 ],
-                "warnings": [],
+                "warnings": [
+                    "warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.",
+                    "warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`."
+                ],
                 "suggestions": [
-                    "week5/week5-kadai3.py:10:15: F541 [*] f-string without any placeholders",
-                    "   |",
-                    " 9 |     def describe_user(self):",
-                    "10 |         print(f\"\u30e6\u30fc\u30b6\u30fc\u60c5\u5831:\")",
-                    "   |               ^^^^^^^^^^^^^^^^ F541",
-                    "11 |         print(f\"\u540d\u524d: {self.first_name} {self.last_name}\")",
-                    "12 |         print(f\"\u6027\u5225: {self.gender}\")",
-                    "   |",
-                    "   = help: Remove extraneous `f` prefix",
+                    "week1/week1-kadai1.py:1:1: INP001 File `week1/week1-kadai1.py` is part of an implicit namespace package. Add an `__init__.py`.",
+                    "week1/week1-kadai1.py:1:1: D100 Missing docstring in public module",
+                    "week1/week1-kadai1.py:1:5: ANN201 Missing return type annotation for public function `output`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ ANN201",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "  = help: Add return type annotation: `None`",
                     "",
-                    "[*] 1 fixable with the `--fix` option."
+                    "week1/week1-kadai1.py:1:5: D103 Missing docstring in public function",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ D103",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai1.py:1:12: ANN001 Missing type annotation for function argument `names`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |            ^^^^^ ANN001",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai1.py:3:9: T201 `print` found",
+                    "  |",
+                    "1 | def output(names):",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |         ^^^^^ T201",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option)."
                 ]
             },
             "mypy": {
@@ -43,37 +66,469 @@
             }
         },
         {
-            "file": "./week5/week5-kadai5.py",
+            "file": "week1/week1-kadai2.py",
             "pylint": {
                 "errors": [],
                 "warnings": [],
                 "suggestions": [
-                    "************* Module week5-kadai5",
-                    "week5/week5-kadai5.py:2:0: C0115: Missing class docstring (missing-class-docstring)",
-                    "week5/week5-kadai5.py:11:14: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)",
-                    "",
-                    "------------------------------------------------------------------",
-                    "Your code has been rated at 9.23/10 (previous run: 9.23/10, +0.00)",
-                    ""
+                    "No files to lint: exiting."
                 ]
             },
             "ruff": {
                 "errors": [
-                    "Found 1 error."
+                    "Found 7 errors."
                 ],
+                "warnings": [
+                    "warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.",
+                    "warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`."
+                ],
+                "suggestions": [
+                    "week1/week1-kadai2.py:1:1: INP001 File `week1/week1-kadai2.py` is part of an implicit namespace package. Add an `__init__.py`.",
+                    "week1/week1-kadai2.py:1:1: D100 Missing docstring in public module",
+                    "week1/week1-kadai2.py:1:5: ANN201 Missing return type annotation for public function `output`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ ANN201",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "  = help: Add return type annotation: `None`",
+                    "",
+                    "week1/week1-kadai2.py:1:5: D103 Missing docstring in public function",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ D103",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai2.py:1:12: ANN001 Missing type annotation for function argument `names`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |            ^^^^^ ANN001",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai2.py:3:9: T201 `print` found",
+                    "  |",
+                    "1 | def output(names):",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |         ^^^^^ T201",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai2.py:10:1: T201 `print` found",
+                    "   |",
+                    " 8 | unavailable_guests = \"Maine\"",
+                    " 9 | ",
+                    "10 | print(f\"Unfortunately, {unavailable_guests} can't make it to the dinner party.\")",
+                    "   | ^^^^^ T201",
+                    "11 | ",
+                    "12 | new_guests = \"David\"",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+                ]
+            },
+            "mypy": {
+                "errors": [],
                 "warnings": [],
                 "suggestions": [
-                    "week5/week5-kadai5.py:11:15: F541 [*] f-string without any placeholders",
-                    "   |",
-                    "10 |     def describe_user(self):",
-                    "11 |         print(f\"\u30e6\u30fc\u30b6\u30fc\u60c5\u5831:\")",
-                    "   |               ^^^^^^^^^^^^^^^^ F541",
-                    "12 |         print(f\"\u540d\u524d: {self.first_name} {self.last_name}\")",
-                    "13 |         print(f\"\u6027\u5225: {self.gender}\")",
-                    "   |",
-                    "   = help: Remove extraneous `f` prefix",
+                    "Success: no issues found in 1 source file"
+                ]
+            }
+        },
+        {
+            "file": "week1/week1-kadai3.py",
+            "pylint": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "No files to lint: exiting."
+                ]
+            },
+            "ruff": {
+                "errors": [
+                    "Found 8 errors."
+                ],
+                "warnings": [
+                    "warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.",
+                    "warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`."
+                ],
+                "suggestions": [
+                    "week1/week1-kadai3.py:1:1: INP001 File `week1/week1-kadai3.py` is part of an implicit namespace package. Add an `__init__.py`.",
+                    "week1/week1-kadai3.py:1:1: D100 Missing docstring in public module",
+                    "week1/week1-kadai3.py:1:5: ANN201 Missing return type annotation for public function `output`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ ANN201",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "  = help: Add return type annotation: `None`",
                     "",
-                    "[*] 1 fixable with the `--fix` option."
+                    "week1/week1-kadai3.py:1:5: D103 Missing docstring in public function",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ D103",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai3.py:1:12: ANN001 Missing type annotation for function argument `names`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |            ^^^^^ ANN001",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai3.py:3:9: T201 `print` found",
+                    "  |",
+                    "1 | def output(names):",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |         ^^^^^ T201",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai3.py:10:1: T201 `print` found",
+                    "   |",
+                    " 8 | unavailable_guests = \"Maine\"",
+                    " 9 | ",
+                    "10 | print(f\"Unfortunately, {unavailable_guests} can't make it to the dinner party.\")",
+                    "   | ^^^^^ T201",
+                    "11 | ",
+                    "12 | new_guests = \"David\"",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai3.py:18:1: T201 `print` found",
+                    "   |",
+                    "16 | output(guests)",
+                    "17 | ",
+                    "18 | print(\"I found a bigger table, so I can invite more people.\")",
+                    "   | ^^^^^ T201",
+                    "19 | ",
+                    "20 | guests.insert(0, \"Pilar\")",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+                ]
+            },
+            "mypy": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "Success: no issues found in 1 source file"
+                ]
+            }
+        },
+        {
+            "file": "week1/week1-kadai4.py",
+            "pylint": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "No files to lint: exiting."
+                ]
+            },
+            "ruff": {
+                "errors": [
+                    "Found 13 errors."
+                ],
+                "warnings": [
+                    "warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.",
+                    "warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`."
+                ],
+                "suggestions": [
+                    "week1/week1-kadai4.py:1:1: INP001 File `week1/week1-kadai4.py` is part of an implicit namespace package. Add an `__init__.py`.",
+                    "week1/week1-kadai4.py:1:1: D100 Missing docstring in public module",
+                    "week1/week1-kadai4.py:1:5: ANN201 Missing return type annotation for public function `output`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ ANN201",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "  = help: Add return type annotation: `None`",
+                    "",
+                    "week1/week1-kadai4.py:1:5: D103 Missing docstring in public function",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ D103",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai4.py:1:12: ANN001 Missing type annotation for function argument `names`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |            ^^^^^ ANN001",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai4.py:3:9: T201 `print` found",
+                    "  |",
+                    "1 | def output(names):",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |         ^^^^^ T201",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai4.py:10:1: T201 `print` found",
+                    "   |",
+                    " 8 | unavailable_guests = \"Maine\"",
+                    " 9 | ",
+                    "10 | print(f\"Unfortunately, {unavailable_guests} can't make it to the dinner party.\")",
+                    "   | ^^^^^ T201",
+                    "11 | ",
+                    "12 | new_guests = \"David\"",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai4.py:18:1: T201 `print` found",
+                    "   |",
+                    "16 | output(guests)",
+                    "17 | ",
+                    "18 | print(\"I found a bigger table, so I can invite more people.\")",
+                    "   | ^^^^^ T201",
+                    "19 | ",
+                    "20 | guests.insert(0, \"Pilar\")",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai4.py:29:1: T201 `print` found",
+                    "   |",
+                    "27 | output(guests)",
+                    "28 | ",
+                    "29 | print(\"Unfortunately, due to shortage of ingredients, I can only invite two people to the dinner party.\")",
+                    "   | ^^^^^ T201",
+                    "30 | ",
+                    "31 | while len(guests) > 2:",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai4.py:31:21: PLR2004 Magic value used in comparison, consider replacing `2` with a constant variable",
+                    "   |",
+                    "29 | print(\"Unfortunately, due to shortage of ingredients, I can only invite two people to the dinner party.\")",
+                    "30 | ",
+                    "31 | while len(guests) > 2:",
+                    "   |                     ^ PLR2004",
+                    "32 |     print(f\"Dear {guests.pop()}, I'm sorry to inform you that I can no longer invite you to the dinner party.\")",
+                    "   |",
+                    "",
+                    "week1/week1-kadai4.py:32:5: T201 `print` found",
+                    "   |",
+                    "31 | while len(guests) > 2:",
+                    "32 |     print(f\"Dear {guests.pop()}, I'm sorry to inform you that I can no longer invite you to the dinner party.\")",
+                    "   |     ^^^^^ T201",
+                    "33 | ",
+                    "34 | for guest in guests:",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai4.py:35:5: T201 `print` found",
+                    "   |",
+                    "34 | for guest in guests:",
+                    "35 |     print(f\"Dear {guest}, you are still invited to the dinner party. Please let me know if you can make it.\")",
+                    "   |     ^^^^^ T201",
+                    "36 | ",
+                    "37 | del guests[:]",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai4.py:38:1: T201 `print` found",
+                    "   |",
+                    "37 | del guests[:]",
+                    "38 | print(guests)",
+                    "   | ^^^^^ T201",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "No fixes available (8 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+                ]
+            },
+            "mypy": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "Success: no issues found in 1 source file"
+                ]
+            }
+        },
+        {
+            "file": "week1/week1-kadai5.py",
+            "pylint": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "No files to lint: exiting."
+                ]
+            },
+            "ruff": {
+                "errors": [
+                    "Found 9 errors."
+                ],
+                "warnings": [
+                    "warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.",
+                    "warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`."
+                ],
+                "suggestions": [
+                    "week1/week1-kadai5.py:1:1: INP001 File `week1/week1-kadai5.py` is part of an implicit namespace package. Add an `__init__.py`.",
+                    "week1/week1-kadai5.py:1:1: D100 Missing docstring in public module",
+                    "week1/week1-kadai5.py:3:1: T201 `print` found",
+                    "  |",
+                    "1 | places = [\"Maldives\", \"Bali\", \"Great Barrier Reef\", \"Hawaii\", \"Amalfi Coast\"]",
+                    "2 | ",
+                    "3 | print(\"Original List:\", places)",
+                    "  | ^^^^^ T201",
+                    "4 | ",
+                    "5 | print(\"Sorted List:\", sorted(places))",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai5.py:5:1: T201 `print` found",
+                    "  |",
+                    "3 | print(\"Original List:\", places)",
+                    "4 | ",
+                    "5 | print(\"Sorted List:\", sorted(places))",
+                    "  | ^^^^^ T201",
+                    "6 | ",
+                    "7 | print(\"Reversed List:\", sorted(places, reverse=True))",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai5.py:7:1: T201 `print` found",
+                    "  |",
+                    "5 | print(\"Sorted List:\", sorted(places))",
+                    "6 | ",
+                    "7 | print(\"Reversed List:\", sorted(places, reverse=True))",
+                    "  | ^^^^^ T201",
+                    "8 | ",
+                    "9 | places.reverse()",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai5.py:10:1: T201 `print` found",
+                    "   |",
+                    " 9 | places.reverse()",
+                    "10 | print(\"Reversed List:\", places)",
+                    "   | ^^^^^ T201",
+                    "11 | ",
+                    "12 | places.reverse()",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai5.py:13:1: T201 `print` found",
+                    "   |",
+                    "12 | places.reverse()",
+                    "13 | print(\"List restored to original order:\", places)",
+                    "   | ^^^^^ T201",
+                    "14 | ",
+                    "15 | places.sort()",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai5.py:16:1: T201 `print` found",
+                    "   |",
+                    "15 | places.sort()",
+                    "16 | print(\"List sorted alphabetically:\", places)",
+                    "   | ^^^^^ T201",
+                    "17 | ",
+                    "18 | places.sort(reverse=True)",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai5.py:19:1: T201 `print` found",
+                    "   |",
+                    "18 | places.sort(reverse=True)",
+                    "19 | print(\"List sorted reverse alphabetically:\", places)",
+                    "   | ^^^^^ T201",
+                    "   |",
+                    "   = help: Remove `print`",
+                    "",
+                    "No fixes available (7 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+                ]
+            },
+            "mypy": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "Success: no issues found in 1 source file"
+                ]
+            }
+        },
+        {
+            "file": "week1/week1-kadai6.py",
+            "pylint": {
+                "errors": [],
+                "warnings": [],
+                "suggestions": [
+                    "No files to lint: exiting."
+                ]
+            },
+            "ruff": {
+                "errors": [
+                    "Found 7 errors."
+                ],
+                "warnings": [
+                    "warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.",
+                    "warning: `multi-line-summary-first-line` (D212) and `multi-line-summary-second-line` (D213) are incompatible. Ignoring `multi-line-summary-second-line`."
+                ],
+                "suggestions": [
+                    "week1/week1-kadai6.py:1:1: INP001 File `week1/week1-kadai6.py` is part of an implicit namespace package. Add an `__init__.py`.",
+                    "week1/week1-kadai6.py:1:1: D100 Missing docstring in public module",
+                    "week1/week1-kadai6.py:1:5: ANN201 Missing return type annotation for public function `output`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ ANN201",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "  = help: Add return type annotation: `None`",
+                    "",
+                    "week1/week1-kadai6.py:1:5: D103 Missing docstring in public function",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |     ^^^^^^ D103",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai6.py:1:12: ANN001 Missing type annotation for function argument `names`",
+                    "  |",
+                    "1 | def output(names):",
+                    "  |            ^^^^^ ANN001",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |",
+                    "",
+                    "week1/week1-kadai6.py:3:9: T201 `print` found",
+                    "  |",
+                    "1 | def output(names):",
+                    "2 |     for name in names:",
+                    "3 |         print(f\"dear {name}, I would like to invite you to a dinner party at my house. Please let me know if you can make it.\")",
+                    "  |         ^^^^^ T201",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "week1/week1-kadai6.py:8:1: T201 `print` found",
+                    "  |",
+                    "6 | guests = [\"Maine\", \"Lucy\", \"Rebecca\"]",
+                    "7 | output(guests)",
+                    "8 | print(f\"invite guests total: {len(guests)}\")",
+                    "  | ^^^^^ T201",
+                    "  |",
+                    "  = help: Remove `print`",
+                    "",
+                    "No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option)."
                 ]
             },
             "mypy": {
@@ -86,12 +541,12 @@
         }
     ],
     "summary": {
-        "total_files": 70,
-        "success": 68,
-        "fail": 2,
-        "total_errors": 2,
-        "total_warnings": 0,
-        "total_suggestions": 482,
-        "process_time": "22.49 seconds"
+        "total_files": 6,
+        "success": 0,
+        "fail": 6,
+        "total_errors": 6,
+        "total_warnings": 12,
+        "total_suggestions": 383,
+        "process_time": "1.23 seconds"
     }
 }
