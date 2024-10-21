@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://ssh-remote+assignment-server/home/takaya/assignment"
+		}
+	],
+	"remoteAuthority": "ssh-remote+assignment-server",
+	"settings": {}
+}

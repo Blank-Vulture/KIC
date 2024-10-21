@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英単語検索サイト - Grid</title>
+  <link rel="stylesheet" href="mystyle.css">
+  <style>
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      margin: 2em auto;
+      max-width: 800px;
+      background-color: #2e2e2e;
+      padding: 2em;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>英単語検索サイト</h1>
+  <h3>英単語のみ動作します</h3>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="box.html">Box Model</a></li>
+      <li><a href="flex.html">Flexbox</a></li>
+      <li><a href="grid.html">Grid</a></li>
+      <li><a href="absolute.html">Absolute Position</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <form id="searchForm">
+    <input type="text" id="wordInput" placeholder="検索する単語を入力してください" required>
+    <button type="submit">検索</button>
+  </form>
+  <div id="result"></div>
+</main>
+<footer>
+  <p>&copy; 2024 英単語検索サイト</p>
+</footer>
+<script src="api.js"></script>
+</body>
+</html>

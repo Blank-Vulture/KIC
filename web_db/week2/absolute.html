@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英単語検索サイト - Absolute Position</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        main {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            height: 400px;
+            margin: 2em auto;
+            background-color: #2e2e2e;
+            padding: 2em;
+            border-radius: 8px;
+        }
+
+        #result {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>英単語検索サイト</h1>
+    <h3>英単語のみ動作します</h3>
+    <h6>このページの動作は不安定です。ナビゲーションバーがクリックできなくなったら再読み込みしてください</h6>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="box.html">Box Model</a></li>
+            <li><a href="flex.html">Flexbox</a></li>
+            <li><a href="grid.html">Grid</a></li>
+            <li><a href="absolute.html">Absolute Position</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form id="searchForm">
+        <input type="text" id="wordInput" placeholder="検索する単語を入力してください" required>
+        <button type="submit">検索</button>
+    </form>
+    <div id="result"></div>
+</main>
+<footer>
+    <p>&copy; 2024 英単語検索サイト</p>
+</footer>
+<script src="api.js"></script>
+</body>
+</html>
