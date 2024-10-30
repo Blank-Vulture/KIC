@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faker API データ表示</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-primary my-4">Faker API データ表示</h1>
+
+    <!-- フォーム -->
+    <form id="dataForm" class="mb-4">
+        <div class="mb-3">
+            <label for="requestType" class="form-label">データの種類</label>
+            <select id="requestType" class="form-select">
+                <option value="address">住所</option>
+                <option value="books">書籍</option>
+                <option value="companies">会社</option>
+                <option value="creditCards">クレジットカード</option>
+                <option value="images">画像</option>
+                <option value="persons">人</option>
+                <option value="places">場所</option>
+                <option value="products">商品</option>
+                <option value="texts">テキスト</option>
+                <option value="users">ユーザー</option>
+            </select>
+        </div>
+        
+        <!-- 共通パラメータ -->
+        <div class="mb-3">
+            <label for="locale" class="form-label">ロケール (言語)</label>
+            <select id="locale" class="form-select">
+                <option value="en_US">English (US)</option>
+                <option value="ja_JP">日本語 (JP)</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">取得するデータの数</label>
+            <input type="number" class="form-control" id="quantity" placeholder="1" value="1" min="1">
+        </div>
+        <div class="mb-3">
+            <label for="seed" class="form-label">シード値 (オプション)</label>
+            <input type="number" class="form-control" id="seed" placeholder="ランダム生成シード">
+        </div>
+        
+        <!-- リクエストごとに異なる追加パラメータ -->
+        <div id="additionalParams"></div>
+
+        <button type="submit" class="btn btn-success">データ取得</button>
+    </form>
+
+    <!-- データ表示エリア fakerAPIが提供するplaceimg.comがユーザ画像として提供するplaceimgは存在しないサイトなので検証ツールではエラーが出ます-->
+    <div id="dataContainer" class="row"></div>
+
+    <!-- 生のリクエスト結果表示エリア -->
+    <h2 class="text-primary my-4">生のリクエスト結果</h2>
+    <pre id="rawData" class="bg-light p-3 border rounded"></pre>
+</div>
+
+<!-- Bootstrap JavaScriptとaxiosの読み込み -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

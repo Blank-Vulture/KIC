@@ -23,18 +23,18 @@ elif [ -z "$CLASS_DATE" ]; then
 fi
 
 # 基本パスの設定
-SRC_DIR="/Users/pality/portfolio/KIC/java/tokuron/src/$PERIOD"
+SRC_DIR="/Users/pality/portfolio/KIC/java/tokuron/src"
 OUTPUT_DIR="./report"
 REPORT_FILE="${OUTPUT_DIR}/${PERIOD}_report.md"
 
 # ソースディレクトリが存在しない場合のエラーチェック
-if [ ! -d "$SRC_DIR" ]; then
-    echo "Error: Source directory '$SRC_DIR' does not exist."
+if [ ! -d "$SRC_DIR/$PERIOD" ]; then
+    echo "Error: Source directory '$SRC_DIR/$PERIOD' does not exist."
     exit 1
 fi
 
 # reportディレクトリが存在しない場合は作成
-if [ ! -d "$OUTPUT_DIR" ]; then
+if [ ! -d "$OUTPUT_DIR" ];then
     mkdir -p "$OUTPUT_DIR"
 fi
 
@@ -50,33 +50,25 @@ echo "**名前**: $STUDENT_NAME" >> $REPORT_FILE
 echo "**授業日**: $CLASS_DATE" >> $REPORT_FILE
 echo "" >> $REPORT_FILE
 
-# 実行対象のファイルを検索し、Practice*.java、Mondai*.java の順で処理（昇順）
-PRACTICE_FILES=$(find "$SRC_DIR" -name "Practice*.java" | sort)
-MONDAI_FILES=$(find "$SRC_DIR" -name "Mondai*.java" | sort)
-
-# サブディレクトリの検索（例: period2.Kadai1）
-SUBDIRS=$(find /Users/pality/portfolio/KIC/java/tokuron/src -type d -name "$PERIOD.*" | sort)
+# 指定されたperiodディレクトリ以下のすべてのJavaファイルを検索（再帰的に）
+ALL_FILES=$(find "$SRC_DIR/$PERIOD" -type f -name "*.java" | sort)
 
 # ファイルが見つからなかった場合のエラーチェック
-if [ -z "$PRACTICE_FILES" ] && [ -z "$MONDAI_FILES" ] && [ -z "$SUBDIRS" ]; then
-    echo "Warning: No Practice, Mondai files, or subdirectories found in '$SRC_DIR'."
+if [ -z "$ALL_FILES" ]; then
+    echo "Warning: No Java files found in '$SRC_DIR/$PERIOD'."
 fi
 
 # Javaファイルのソースコードをレポートに追加する関数
 add_to_report() {
     local file=$1
-    local type=$2
-    local display_number=$3
+    local section_title=$2
     local class_name=$(basename "$file" .java)
-    local section_title="$type${display_number}-${class_name}"
 
     # ソースコードセクション
     echo "## $section_title" >> $REPORT_FILE
     echo "### ソースコード" >> $REPORT_FILE
     echo '```java' >> $REPORT_FILE
-    echo >> $REPORT_FILE  # 改行を追加
     cat "$file" >> $REPORT_FILE
-    echo >> $REPORT_FILE  # 改行を追加
     echo '```' >> $REPORT_FILE
     echo "" >> $REPORT_FILE
 
@@ -92,36 +84,36 @@ add_to_report() {
     echo "" >> $REPORT_FILE
 }
 
-# 各Practiceファイルをレポートに追加（昇順）
-for file in $PRACTICE_FILES; do
-    practice_num=$(basename "$file" .java | grep -o -E '[0-9]+')
-    add_to_report "$file" "練習" $practice_num
-done
+# 練習と課題の表示フラグを初期化
+FIRST_PRACTICE_ADDED=false
+FIRST_KADAI_ADDED=false
 
-# 各Mondaiファイルをレポートに追加（昇順）
-for file in $MONDAI_FILES; do
-    mondai_num=$(basename "$file" .java | grep -o -E '[0-9]+')
-    add_to_report "$file" "問題" $mondai_num
-done
+# すべてのJavaファイルを処理
+for file in $ALL_FILES; do
+    class_name=$(basename "$file" .java)
+    parent_dir=$(basename "$(dirname "$file")")
 
-# サブディレクトリの処理
-for subdir in $SUBDIRS; do
-    # サブディレクトリのタイトルを追加（例: period2.Kadai1）
-    subdir_name=$(basename "$subdir")
-    echo "## $subdir_name" >> $REPORT_FILE
-    SUB_PRACTICE_FILES=$(find "$subdir" -name "Practice*.java" | sort)
-    SUB_MONDAI_FILES=$(find "$subdir" -name "Mondai*.java" | sort)
-
-    # サブディレクトリ内のファイルを追加
-    for file in $SUB_PRACTICE_FILES; do
-        practice_num=$(basename "$file" .java | grep -o -E '[0-9]+')
-        add_to_report "$file" "練習" $practice_num
-    done
-
-    for file in $SUB_MONDAI_FILES; do
-        mondai_num=$(basename "$file" .java | grep -o -E '[0-9]+')
-        add_to_report "$file" "問題" $mondai_num
-    done
+    # ファイル名または親ディレクトリ名で「練習」か「課題」かを判定
+    if [[ $class_name =~ Practice ]] || [[ $parent_dir =~ practice ]]; then
+        # 最初の練習セクションの追加
+        if [ "$FIRST_PRACTICE_ADDED" = false ]; then
+            echo "## 練習" >> $REPORT_FILE
+            FIRST_PRACTICE_ADDED=true
+        fi
+        practice_num=$(echo "$class_name" | grep -o -E '[0-9]+')
+        if [ -z "$practice_num" ]; then
+            practice_num="10" # practice10 の場合
+        fi
+        add_to_report "$file" "練習${practice_num}"
+    else
+        # 最初の課題セクションの追加
+        if [ "$FIRST_KADAI_ADDED" = false ]; then
+            echo "## 課題" >> $REPORT_FILE
+            FIRST_KADAI_ADDED=true
+        fi
+        mondai_num=$(echo "$class_name" | grep -o -E '[0-9]+')
+        add_to_report "$file" "問題${mondai_num}"
+    fi
 done
 
 # 備考セクションを追加
