@@ -6,11 +6,11 @@ public class Mondai1 {
 		String title = "お知らせ";
 		String address = "info@example.com";
 		String text = "新しい情報です";
-		
+
 		email(title, address, text);
 
 	}
-	
+
 	//emailメソッドを定義
 	//戻り値：なし
 	//引数：String title, String address, String text

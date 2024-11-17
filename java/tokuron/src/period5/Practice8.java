@@ -5,16 +5,16 @@ public class Practice8 {
     public static void main(String[] args) {
         boolean[] loop = {true};
         Scanner scanner = new Scanner(System.in);
-        
+
         while (loop[0]) {
             System.out.println("どの動物の鳴き声が聞きたいですか？ 犬:1, 猫:2, 虎:3, 終了:4");
             int input = scanner.nextInt();
-            
+
             // 入力に基づいて鳴き声を取得
             String result = getAnimalSound(input, loop);
             System.out.println(result);
         }
-        
+
         scanner.close();
     }
 

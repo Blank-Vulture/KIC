@@ -5,10 +5,10 @@ public class Mondai2 {
 	public static void main(String[] args) {
 		String address = "info@example.com";
 		String text = "javaの勉強をしています";
-		
+
 		email(address, text);
 	}
-	
+
 	//emailメソッドをオーバーロード
 	//titleは無題
 	public static void email(String address, String text) {

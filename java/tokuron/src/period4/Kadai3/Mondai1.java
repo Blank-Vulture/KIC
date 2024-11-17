@@ -8,8 +8,8 @@ public class Mondai1 {
 
         // for文で配列の要素を1つずつ取り出して表示
         System.out.println("for文での表示:");
-        for (int i = 0; i < moneyList.length; i++) {
-            System.out.println(moneyList[i]);
+        for (int element : moneyList) {
+            System.out.println(element);
         }
 
         // 拡張for文で配列の要素を1つずつ取り出して表示
