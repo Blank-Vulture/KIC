@@ -1,0 +1,57 @@
+/* ページ全体をフレックスレイアウトで制御 */
+html, body {
+    height: 100%; /* ページ全体の高さを100%に */
+    margin: 0; /* 余白をリセット */
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+}
+
+/* メインコンテンツを可変領域に */
+#main-content {
+    flex: 1; /* 残りの領域を占有 */
+}
+
+/* フッターを下部に固定 */
+.footer {
+    background-color: #343a40; /* ダークカラー */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    flex-shrink: 0; /* フッターのサイズを固定 */
+}
+
+/* モーダルウィンドウのスタイル */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-modal.hidden {
+    display: none;
+}
+
+.custom-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.custom-modal .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,14 @@
+{
+    "name": "takaya/med-management",
+    "description": "Medications Management app",
+    "autoload": {
+        "psr-4": {
+            "Takaya\\MedManagement\\": "src/"
+        }
+    },
+    "require": {
+        "phpgangsta/googleauthenticator": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
