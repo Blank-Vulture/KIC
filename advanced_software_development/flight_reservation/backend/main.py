@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # MySQL の接続情報を環境変数から取得（utf8mb4 を明示）
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://root:KICKICKIC@db/flight_db?charset=utf8mb4")
+DATABASE_URL = os.getenv("DATABASE_URL", "mysql+mysqlconnector://root:XXX@db/flight_db?charset=utf8mb4")
 
 # SQLAlchemy の設定
 engine = create_engine(DATABASE_URL, connect_args={"charset": "utf8mb4"})
