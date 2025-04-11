@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: mysql+mysqlconnector://root:KICKICKIC@db/flight_db
+      DATABASE_URL: mysql+mysqlconnector://root:XXX@db/flight_db
     depends_on:
       flight_db:  # `db` ではなく `flight_db` を指定
         condition: service_healthy
@@ -18,7 +18,7 @@ services:
     image: mysql:latest
     container_name: flight_db
     environment:
-      MYSQL_ROOT_PASSWORD: KICKICKIC
+      MYSQL_ROOT_PASSWORD: XXX
       MYSQL_DATABASE: flight_db
       MYSQL_USER: user
       MYSQL_PASSWORD: userpassword
