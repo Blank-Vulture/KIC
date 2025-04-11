@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: ../backend  # 1つ上のディレクトリの `backend` を指定
+      dockerfile: Dockerfile
+    container_name: flight_backend
+    volumes:
+      - ../backend:/app  # 1つ上のディレクトリの `backend` をマウント
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: mysql+mysqlconnector://root:KICKICKIC@db/flight_db
+    depends_on:
+      flight_db:  # `db` ではなく `flight_db` を指定
+        condition: service_healthy
+
+  flight_db:  # サービス名を `db` ではなく `flight_db` に統一
+    image: mysql:latest
+    container_name: flight_db
+    environment:
+      MYSQL_ROOT_PASSWORD: KICKICKIC
+      MYSQL_DATABASE: flight_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../db/init:/docker-entrypoint-initdb.d
+      - ../db/init/my.cnf:/etc/mysql/conf.d/my.cnf
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pKICKICKIC"]
+      interval: 10s
+      retries: 5
+
+volumes:
+  mysql_data:

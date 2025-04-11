@@ -1,0 +1,16 @@
+{
+  "name": "Flight Reservation",
+  "dockerComposeFile": ["compose.yml"],
+  "service": "backend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "forwardPorts": [8000, 3306]
+}
